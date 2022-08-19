@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    touch-action: none;
+    background: linear-gradient( to left , #7a00cc, #ff00ff);
+}
+
+#item {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    touch-action: none;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+}
+
+span {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+    touch-action: none;
+    user-select: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px
+                12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: scale(0.25);
+    transform-style: 50% 100%;
+    cursor: pointer;
+}
+
+#item.mystyle span:nth-child(1) {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    margin-top: -80px;
+}
+
+#item.mystyle span:nth-child(2) {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    margin-left: -80px;
+}
+
+#item.mystyle span:nth-child(3) {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    margin-top: 80px;
+}
+
+#item.mystyle span:nth-child(4) {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    margin-left: 80px;
+}
+
+.fa-brands {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fa-brands.fa-square-instagram:hover {
+    color: #3f729b;
+}
+
+.fa-brands.fa-twitter:hover {
+    color: #1DA1F2;
+}
+
+.fa-brands.fa-github:hover {
+    color: #171515;
+}
+
+.fa-brands.fa-facebook:hover {
+    color: #4267B2;
+}
+
+#plus {
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#item::before {
+    content: "";
+    height: 30px;
+    width: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    border-radius: 5px;
+    transition: all .03s ease;
+}
+
+#item::after {
+    content: "";
+    height: 30px;
+    width: 5px;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    background: black;
+    border-radius: 5px;
+    transform: rotate(90deg);
+}
+
+#item.mystyle::before {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    transform: rotate(320deg);
+}
+
+#item.mystyle::after {
+    position: absolute;
+    transform: rotate(220deg);
+}
